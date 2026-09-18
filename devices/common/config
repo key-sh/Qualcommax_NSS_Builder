@@ -151,30 +151,32 @@ CONFIG_BUSYBOX_CONFIG_DEVMEM=y
 ## /root/pstore on the next boot.
 CONFIG_PACKAGE_kmod-ramoops=y
 
-# ===== 追加定制包（2026-09-18 v2）=====
-
 # 多WAN分流
 CONFIG_PACKAGE_mwan3=y
 CONFIG_PACKAGE_luci-app-mwan3=y
+CONFIG_PACKAGE_luci-i18n-mwan3-zh-cn=y
 
-# WireGuard 远程接入
+# WireGuard（UI已并入luci-proto-wireguard，无独立app包）
 CONFIG_PACKAGE_kmod-wireguard=y
 CONFIG_PACKAGE_wireguard-tools=y
 CONFIG_PACKAGE_luci-proto-wireguard=y
 CONFIG_PACKAGE_rpcd-mod-wireguard=y
-CONFIG_PACKAGE_luci-app-wireguard=y
 
-# 广告/IP拦截（banip；adblock已弃用）
+# 广告/IP拦截
 CONFIG_PACKAGE_luci-app-banip=y
+CONFIG_PACKAGE_luci-i18n-banip-zh-cn=y
 
-# DDNS（内置Cloudflare/DNSPod/HE，不含阿里云）
+# DDNS
 CONFIG_PACKAGE_luci-app-ddns=y
 CONFIG_PACKAGE_ddns-scripts=y
 CONFIG_PACKAGE_ddns-scripts-services=y
+CONFIG_PACKAGE_luci-i18n-ddns-zh-cn=y
 
 # UPnP
 CONFIG_PACKAGE_luci-app-upnp=y
 CONFIG_PACKAGE_miniupnpd-nftables=y
+CONFIG_PACKAGE_luci-i18n-upnp-zh-cn=y
 
-# 全局中文开关（所有已选LuCI组件自动带中文）
-CONFIG_LUCI_LANG_zh_cn=y
+# LuCI界面核心中文（系统/网络/状态/防火墙页）
+CONFIG_PACKAGE_luci-i18n-base-zh-cn=y
+CONFIG_PACKAGE_luci-i18n-firewall-zh-cn=y
